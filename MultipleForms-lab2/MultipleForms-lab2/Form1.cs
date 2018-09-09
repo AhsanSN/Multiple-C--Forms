@@ -12,10 +12,11 @@ namespace MultipleForms_lab2
 {
     public partial class Form1 : Form
     {
-        string[] names = { "Ahsan", "Mohsin", "Zakir", "Hadia" , "Zara" };
-        string[] country = { "Pakistan", "India", "China", "Pakistan", "Afghanistan" };
-        string[] city = { "Karachi", "Mumbai", "Beijing", "Lahore", "Kabul" };
-        string[] gender = { "Male", "Male", "Male", "Female", "Female" };
+        public string selectedIndex = "as";
+        public string[] names = { "Ahsan", "Mohsin", "Zakir", "Hadia" , "Zara" };
+        public string[] country = { "Pakistan", "India", "China", "Pakistan", "Afghanistan" };
+        public string[] city = { "Karachi", "Mumbai", "Beijing", "Lahore", "Kabul" };
+        public string[] gender = { "Male", "Male", "Male", "Female", "Female" };
 
         public Form1()
         {
@@ -104,6 +105,10 @@ namespace MultipleForms_lab2
 
         private void viewProfileBtn_Click(object sender, EventArgs e)
         {
+            selectedIndex =  "asjaksdnkajsnsad";
+
+            //searchResult.SelectedItem.ToString()
+
             UserProfile f2 = new UserProfile();
             f2.ShowDialog(); // Shows Form2
         }

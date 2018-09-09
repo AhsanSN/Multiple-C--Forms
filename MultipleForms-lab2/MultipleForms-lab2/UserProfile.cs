@@ -19,7 +19,11 @@ namespace MultipleForms_lab2
 
         private void UserProfile_Load(object sender, EventArgs e)
         {
-            //label1.Text = "asdasd";
+            Form1 searchForm = new Form1();
+            name.Text = searchForm.selectedIndex;
+            gender.Text = searchForm.gender[0];
+            country.Text = searchForm.country[0];
+            city.Text = searchForm.city[0];
         }
     }
 }
