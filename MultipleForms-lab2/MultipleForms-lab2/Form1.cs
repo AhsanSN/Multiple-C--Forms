@@ -16,7 +16,6 @@ namespace MultipleForms_lab2
         string[] country = { "Pakistan", "India", "China", "Pakistan", "Afghanistan" };
         string[] city = { "Karachi", "Mumbai", "Beijing", "Lahore", "Kabul" };
         string[] gender = { "Male", "Male", "Male", "Female", "Female" };
-        List<int> resultindices = new List<int>();
 
         public Form1()
         {
@@ -94,7 +93,7 @@ namespace MultipleForms_lab2
             }
             for (int i = 0; i < names.Count(); i++)
             {
-                if (((country[i] == selectCountry.SelectedItem) || (selectCountry.SelectedIndex <1)) && (names[i].ToLower().Contains(firstnameTxt.Text.ToLower()) || firstnameTxt.Text.Length == 0) && genderRadio == gender[i])
+                if (((country[i] == selectCountry.SelectedItem) || (selectCountry.SelectedIndex <1))&& ((city[i] == citySelect.SelectedItem) || (citySelect.SelectedIndex < 1)) && (names[i].ToLower().Contains(firstnameTxt.Text.ToLower()) || firstnameTxt.Text.Length == 0) && genderRadio == gender[i])
                 {
                     searchResult.Items.Add(names[i]);
                 }

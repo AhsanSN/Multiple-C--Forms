@@ -40,10 +40,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.searchResult = new System.Windows.Forms.ListBox();
             this.viewProfileBtn = new System.Windows.Forms.Button();
             this.editProfileBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.searchResult = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -119,13 +119,13 @@
             this.femaleRadio.Name = "femaleRadio";
             this.femaleRadio.Size = new System.Drawing.Size(59, 17);
             this.femaleRadio.TabIndex = 1;
-            this.femaleRadio.TabStop = true;
             this.femaleRadio.Text = "Female";
             this.femaleRadio.UseVisualStyleBackColor = true;
             // 
             // maleRadio
             // 
             this.maleRadio.AutoSize = true;
+            this.maleRadio.Checked = true;
             this.maleRadio.Location = new System.Drawing.Point(19, 19);
             this.maleRadio.Name = "maleRadio";
             this.maleRadio.Size = new System.Drawing.Size(48, 17);
@@ -171,6 +171,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Results";
             // 
+            // searchResult
+            // 
+            this.searchResult.FormattingEnabled = true;
+            this.searchResult.Location = new System.Drawing.Point(25, 31);
+            this.searchResult.Name = "searchResult";
+            this.searchResult.Size = new System.Drawing.Size(403, 186);
+            this.searchResult.TabIndex = 0;
+            // 
             // viewProfileBtn
             // 
             this.viewProfileBtn.Location = new System.Drawing.Point(56, 433);
@@ -199,14 +207,6 @@
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // searchResult
-            // 
-            this.searchResult.FormattingEnabled = true;
-            this.searchResult.Location = new System.Drawing.Point(25, 31);
-            this.searchResult.Name = "searchResult";
-            this.searchResult.Size = new System.Drawing.Size(403, 186);
-            this.searchResult.TabIndex = 0;
             // 
             // Form1
             // 
