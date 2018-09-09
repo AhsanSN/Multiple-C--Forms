@@ -12,11 +12,18 @@ namespace MultipleForms_lab2
 {
     public partial class Form1 : Form
     {
-        public string selectedIndex = "as";
+        public int selectedIndex = -1;
         public string[] names = { "Ahsan", "Mohsin", "Zakir", "Hadia" , "Zara" };
         public string[] country = { "Pakistan", "India", "China", "Pakistan", "Afghanistan" };
         public string[] city = { "Karachi", "Mumbai", "Beijing", "Lahore", "Kabul" };
         public string[] gender = { "Male", "Male", "Male", "Female", "Female" };
+
+        public string[] school = { "NED", "Habib", "KU", "KU", "UET" };
+        public string[] degree = { "EE", "CS", "Electronics", "Architecture", "Painting" };
+        public string[] year = { "2000", "2010", "1997", "1992", "2014" };
+
+        public string[] employer = { "Microsoft", "Apple", "Amazon", "Netflix", "CNN" };
+        public string[] jobTitle = { "Front end developer", "IT Expert", "Product Manager", "Technical Head", "Main Host" };
 
         public Form1()
         {
@@ -105,12 +112,21 @@ namespace MultipleForms_lab2
 
         private void viewProfileBtn_Click(object sender, EventArgs e)
         {
-            selectedIndex =  "asjaksdnkajsnsad";
+            
+            for (int i = 0; i < names.Count(); i++)
+            {
+                if (searchResult.SelectedItem == names[i])
+                {
+                    selectedIndex = i;
+                }
+            }
 
-            //searchResult.SelectedItem.ToString()
-
-            UserProfile f2 = new UserProfile(selectedIndex);
-            f2.ShowDialog(); // Shows Form2
+                //searchResult.SelectedItem.ToString()
+            if (selectedIndex != -1)
+            {
+                UserProfile f2 = new UserProfile(selectedIndex);
+                f2.ShowDialog(); // Shows Form2
+            }
         }
     }
 
