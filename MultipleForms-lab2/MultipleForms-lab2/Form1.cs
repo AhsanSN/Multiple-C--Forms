@@ -109,7 +109,7 @@ namespace MultipleForms_lab2
 
             //searchResult.SelectedItem.ToString()
 
-            UserProfile f2 = new UserProfile();
+            UserProfile f2 = new UserProfile(selectedIndex);
             f2.ShowDialog(); // Shows Form2
         }
     }
