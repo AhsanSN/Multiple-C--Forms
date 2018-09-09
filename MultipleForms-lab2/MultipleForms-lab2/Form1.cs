@@ -78,55 +78,35 @@ namespace MultipleForms_lab2
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            
+
             //clearing for new search
             searchResult.Items.Clear();
-            resultindices.Clear();
 
-            //searching by first name
-            if (firstnameTxt.Text != "")
+
+            string genderRadio = "Male";
+            if (maleRadio.Checked == true)
             {
-                for (int i = 0; i < names.Length; i++)
+                genderRadio = "Male";
+            }
+            else if (femaleRadio.Checked == true)
+            {
+                genderRadio = "Female";
+            }
+            for (int i = 0; i < names.Count(); i++)
+            {
+                if (((country[i] == selectCountry.SelectedItem) || (selectCountry.SelectedIndex <1)) && (names[i].ToLower().Contains(firstnameTxt.Text.ToLower()) || firstnameTxt.Text.Length == 0) && genderRadio == gender[i])
                 {
-                    if (firstnameTxt.Text == names[i])
-                    {
-                        resultindices.Add(i);
-                    }
+                    searchResult.Items.Add(names[i]);
                 }
             }
 
-            //searching by gender male
-            if (maleRadio.Checked = true)
-            {
-                //already search filter
-                if (resultindices.Count > 1)
-                {
-                    resultindices.Clear();
-                    for (int i = 0; i < resultindices.Count; i++)
-                    {
-                        if (gender[resultindices[i]] == "Male")
-                        {
-                            resultindices.Add(resultindices[i]);
-                        }
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < names.Length; i++)
-                    {
-                        if (firstnameTxt.Text == names[i])
-                        {
-                            resultindices.Add(i);
-                        }
-                    }
-                }
-            }
 
-            //sisplaying results
-            for (int i = 0; i < resultindices.Count; i++)
-            {
-                searchResult.Items.Add(names[resultindices[i]]);
-            }
+        }
+
+        private void viewProfileBtn_Click(object sender, EventArgs e)
+        {
+            UserProfile f2 = new UserProfile();
+            f2.ShowDialog(); // Shows Form2
         }
     }
 

@@ -179,6 +179,7 @@
             this.viewProfileBtn.TabIndex = 8;
             this.viewProfileBtn.Text = "View Profile";
             this.viewProfileBtn.UseVisualStyleBackColor = true;
+            this.viewProfileBtn.Click += new System.EventHandler(this.viewProfileBtn_Click);
             // 
             // editProfileBtn
             // 
