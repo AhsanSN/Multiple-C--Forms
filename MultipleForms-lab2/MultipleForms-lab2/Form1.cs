@@ -12,7 +12,11 @@ namespace MultipleForms_lab2
 {
     public partial class Form1 : Form
     {
-        string[] names = { "Ahsan", "Mohsin", "Zakir" };
+        string[] names = { "Ahsan", "Mohsin", "Zakir", "Hadia" , "Zara" };
+        string[] country = { "Pakistan", "India", "China", "Pakistan", "Afghanistan" };
+        string[] city = { "Karachi", "Mumbai", "Beijing", "Lahore", "Kabul" };
+        string[] gender = { "Male", "Male", "Male", "Female", "Female" };
+        List<int> resultindices = new List<int>();
 
         public Form1()
         {
@@ -74,17 +78,58 @@ namespace MultipleForms_lab2
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            
+            //clearing for new search
+            searchResult.Items.Clear();
+            resultindices.Clear();
+
+            //searching by first name
             if (firstnameTxt.Text != "")
             {
                 for (int i = 0; i < names.Length; i++)
                 {
-                   if (firstnameTxt.Text == names[i])
+                    if (firstnameTxt.Text == names[i])
                     {
-                        searchResult.Items.Clear();
-                        searchResult.Items.Add(names[i][0]);
+                        resultindices.Add(i);
                     }
                 }
             }
+
+            //searching by gender male
+            if (maleRadio.Checked = true)
+            {
+                //already search filter
+                if (resultindices.Count > 1)
+                {
+                    resultindices.Clear();
+                    for (int i = 0; i < resultindices.Count; i++)
+                    {
+                        if (gender[resultindices[i]] == "Male")
+                        {
+                            resultindices.Add(resultindices[i]);
+                        }
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        if (firstnameTxt.Text == names[i])
+                        {
+                            resultindices.Add(i);
+                        }
+                    }
+                }
+            }
+
+            //sisplaying results
+            for (int i = 0; i < resultindices.Count; i++)
+            {
+                searchResult.Items.Add(names[resultindices[i]]);
+            }
         }
     }
+
+    // You can convert it back to an array if you would like to
+    //int[] terms = termsList.ToArray();
 }
