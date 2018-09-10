@@ -18,7 +18,7 @@ namespace MultipleForms_lab2
         public string[] city = { "Karachi", "Mumbai", "Beijing", "Lahore", "Kabul" };
         public string[] gender = { "Male", "Male", "Male", "Female", "Female" };
 
-        public string[] school = { "NED", "Habib", "KU", "KU", "UET" };
+        public string[] school = { "NED", "Habib", "Beijing University", "KU", "UET" };
         public string[] degree = { "EE", "CS", "Electronics", "Architecture", "Painting" };
         public string[] year = { "2000", "2010", "1997", "1992", "2014" };
 
@@ -36,6 +36,8 @@ namespace MultipleForms_lab2
             selectCountry.Items.Add("China");
             selectCountry.Items.Add("India");
             selectCountry.Items.Add("Pakistan");
+
+            selectCountry.SelectedItem = "Pakistan";
         }
 
         private void selectCountry_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,7 +91,6 @@ namespace MultipleForms_lab2
             //clearing for new search
             searchResult.Items.Clear();
 
-
             string genderRadio = "Male";
             if (maleRadio.Checked == true)
             {
@@ -101,13 +102,11 @@ namespace MultipleForms_lab2
             }
             for (int i = 0; i < names.Count(); i++)
             {
-                if (((country[i] == selectCountry.SelectedItem) || (selectCountry.SelectedIndex <1))&& ((city[i] == citySelect.SelectedItem) || (citySelect.SelectedIndex < 1)) && (names[i].ToLower().Contains(firstnameTxt.Text.ToLower()) || firstnameTxt.Text.Length == 0) && genderRadio == gender[i])
+                if (((country[i] == selectCountry.SelectedItem) || (selectCountry.SelectedIndex <1))&& ((city[i] == citySelect.SelectedItem) || (citySelect.SelectedIndex < 1)) && (names[i].ToLower().Contains(firstnameTxt.Text.ToLower()) || firstnameTxt.Text.Length == 0) && (genderRadio == gender[i]))
                 {
                     searchResult.Items.Add(names[i]);
                 }
             }
-
-
         }
 
         private void viewProfileBtn_Click(object sender, EventArgs e)
